@@ -23,4 +23,5 @@ def answer_create(request, question_id):
     question.answer_set.create(content=request.POST.get('content'),
                                create_date=timezone.now())
     return redirect('pybo:detail', question_id=question.id)
+    #답변 등록은 리턴 render가 아니고 리다렉트로 해줘야 한다.
 # Create your views here.
