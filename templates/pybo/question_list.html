@@ -1,10 +1,38 @@
-{% if question_list %}
+{% extends 'base.html' %} <!--템플릿 상속 선언이다. -->
+{% block content %}
+<div class="container my-3">
+    <table class="table">
+        <thead>
+            <tr class="thead-dark">
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일자</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if question_list %}
+            {% for question in question_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+<!--윗줄 코드는 번호생성-->
+                <td><a href="{% url 'pybo:detail' question.id %}">
+                    {{ question.subject }}</a></td>
+                <td>{{ question.create_date }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">질문이 없습니다.</td>
+            </tr>
+        {% endif %}
+        </tbody>
 
-    <ul>
-        {% for question in question_list %}
-        <li>
-            <a href="{% url 'pybo:detail' question.id %}" style="text-decoration:none;">{{ question.subject }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-{% endif %}
+    </table>
+<!--질문추가등록을 위한 버튼 생성이다. 그리고 urls.py에 경로추가-->
+    <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">질문등록</a>
+
+
+</div>
+{% endblock %}
+
+
