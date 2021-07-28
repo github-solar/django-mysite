@@ -1,0 +1,48 @@
+#container {
+    width: 640px;
+    margin: 0 auto;
+
+}
+
+#check {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+
+}
+
+#end {
+    border: 1px solid #ccc;
+    /* border-collapse: collapse; */
+}
+
+h1 {
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px;
+    margin: 0;
+}
+
+h2 {
+    color: #f00;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 2em;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.accent {
+    color: #00f;
+
+
+}
+
+.smallText {
+    font-size: 0.7em;
+}

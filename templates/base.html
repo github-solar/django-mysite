@@ -4,32 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'pybo/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'pybo/css/style.css' %}">
     <title>Hello~Pybo</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-<!--로고부분-->
-    <a class="navbar-brand" href="{% url 'pybo:index' %}">Pybo</a>
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
-            data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-<!--로그인 부분-->
-    <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">로그인</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+{% include 'navbar.html' %}
+
 <!--기본 템플릿 안에 삽입될 내용 start-->
 {% block content %}
+
+
 {% endblock %}
 <!--기본 템플릿 안에 삽입될 내용 end-->
-
+<script src="{% static 'pybo/js/jquery-3.6.0.js' %}"></script>
+<script src="{% static 'pybo/js/bootstrap.js' %}"></script>
+{% block script %}
+{% endblock %}
 </body>
 </html>
